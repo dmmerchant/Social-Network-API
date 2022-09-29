@@ -9,7 +9,7 @@ const reactionSchema = new Schema({
         min: [1,'Thought must be a minimum of 1 character.'],
         max: [280, 'Character length cannot exceed 280 characters.']
     },
-    username: {type: String, required: true},
+    username: {type: Schema.Types.ObjectId, ref: 'user'},
     createdAt: { 
         type: Date, 
         default: Date.now, 
